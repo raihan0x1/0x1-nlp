@@ -1,15 +1,43 @@
 # Trusted Publishing: https://docs.pypi.org/trusted-publishers/
 # Workflow shape: https://packaging.python.org/en/latest/guides/publishing-package-distribution-releases-using-github-actions-ci-cd-workflows/
+# Release = bump `version` in pyproject.toml and push to main. A version already on PyPI is skipped.
+# Keep this file name and the `pypi` environment: the PyPI trusted publisher is bound to both.
 name: Publish to PyPI
 
 on:
   push:
-    tags:
-      - "v*"
+    branches: ["main"]
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
 
 jobs:
+  check:
+    name: New version?
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      release: ${{ steps.version.outputs.release }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - id: version
+        run: |
+          version=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
+          code=$(curl -s -o /dev/null -w '%{http_code}' "https://pypi.org/pypi/nahiarhdNLP/$version/json")
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "release=$([ "$code" = 404 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
+          echo "version $version, PyPI answered $code"
+
   build:
-    name: Build distribution
+    name: Test and build distribution
+    needs: check
+    if: needs.check.outputs.release == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -17,9 +45,9 @@ jobs:
           persist-credentials: false
       - uses: actions/setup-python@v6
         with:
-          python-version: "3.x"
-      - name: Install pypa/build
-        run: python3 -m pip install build --user
+          python-version: "3.12"
+      - run: pip install -e .[dev] build
+      - run: pytest
       - name: Build a binary wheel and a source tarball
         run: python3 -m build
       - name: Store the distribution packages
@@ -30,9 +58,7 @@ jobs:
 
   publish-to-pypi:
     name: Publish to PyPI
-    if: startsWith(github.ref, 'refs/tags/')
-    needs:
-      - build
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: pypi
@@ -47,3 +73,22 @@ jobs:
           path: dist/
       - name: Publish distribution to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
+
+  github-release:
+    name: Tag and GitHub release
+    needs: [check, publish-to-pypi]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download all the dists
+        uses: actions/download-artifact@v6
+        with:
+          name: python-package-distributions
+          path: dist/
+      - name: Create tag v${{ needs.check.outputs.version }} and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: >-
+          gh release create "v${{ needs.check.outputs.version }}" dist/*
+          --repo "$GITHUB_REPOSITORY" --target "$GITHUB_SHA" --generate-notes
