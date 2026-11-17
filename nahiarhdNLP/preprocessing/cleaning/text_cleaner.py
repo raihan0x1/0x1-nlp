@@ -141,7 +141,7 @@ class TextCleaner:
         return text.strip()
 
     def remove_repeated_chars(self, text: str) -> str:
-        """Remove repeated characters (e.g., 'bangetttt' -> 'banget').
+        """Shorten 3+ repeated characters to two (e.g., 'bangetttt' -> 'bangett'); digits are kept.
 
         Args:
             text: Input text
@@ -152,8 +152,8 @@ class TextCleaner:
         if not self._flags["remove_repeated_chars"]:
             return text
 
-        # Pattern untuk repeated characters (3+ times)
-        repeated_pattern = r"(.)\1{2,}"
+        # Digits are excluded: '2.000' and 'Rp1.500.000' are numbers, not elongated words.
+        repeated_pattern = r"(\D)\1{2,}"
         return re.sub(repeated_pattern, r"\1\1", text)
 
     def remove_special_chars(self, text: str) -> str:

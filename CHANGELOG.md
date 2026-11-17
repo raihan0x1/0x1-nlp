@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.6.3] - 2026-11-17
+
+### Fixed
+- `remove_repeated_chars` no longer shortens digit runs (`2.000` stayed `2.00`, `Rp1.500.000` became `Rp1.500.00`)
+
 ## [1.6.2] - 2026-09-15
 
 ### Changed

@@ -40,3 +40,10 @@ def test_replace_email_is_callable_on_instance():
     replacer = TextReplace()
     result = replacer.replace_email("mail me at john.doe@gmail.com thanks")
     assert result == "mail me at <email> thanks"
+
+
+def test_remove_repeated_chars_keeps_numbers():
+    cleaner = TextCleaner()
+    assert cleaner.remove_repeated_chars("target 2.000 lokasi") == "target 2.000 lokasi"
+    assert cleaner.remove_repeated_chars("Rp1.500.000, 1111") == "Rp1.500.000, 1111"
+    assert cleaner.remove_repeated_chars("bangetttt!!!!") == "bangett!!"
