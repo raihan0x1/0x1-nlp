@@ -317,14 +317,13 @@ class TextCleaner:
         if not self._flags["remove_currency"] and not force:
             return text
 
+        # The marker is required: a plain number ("2027", "15 persen") is not a currency amount.
+        marker = r"(?:\b(?:Rp|IDR|USD)\.?|[$€£¥₹])\s?"
         if keep_numbers:
-            # Remove currency symbols but keep numbers
-            currency_pattern = r"([$€£¥₹Rp\.,])(\d+(?:[\.,]\d+)*)"
-            result = re.sub(currency_pattern, r"\2", text)
+            result = re.sub(marker + r"(?=\d)", "", text, flags=re.IGNORECASE)
         else:
-            # Remove entire currency mentions
-            currency_pattern = r"[$€£¥₹Rp\.,]?\d+(?:[\.,]\d+)*[$€£¥₹Rp]?"
-            result = re.sub(currency_pattern, "", text)
+            amount = marker + r"\d+(?:[.,]\d+)*(?:,-)?"
+            result = re.sub(amount, "", text, flags=re.IGNORECASE)
 
         result = re.sub(r"\s+", " ", result).strip()
         return result

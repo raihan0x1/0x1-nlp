@@ -1,5 +1,7 @@
 """Pipeline public contract: config dict, step order, known steps."""
 
+import re
+
 import pytest
 
 from nahiarhdNLP.preprocessing import Pipeline
@@ -51,3 +53,20 @@ def test_update_config_rebuilds_enabled_steps():
     pipeline.update_config({"remove_punctuation": True})
     assert pipeline.get_enabled_steps() == ["clean_html", "remove_punctuation"]
     assert pipeline.process("<p>Hello!</p>") == "Hello"
+
+
+NUMBERS_TEXT = "Target 2.000 lokasi pada 2027, naik 15 persen di 1111 desa"
+# Steps whose job is to drop or convert numbers.
+CHANGES_NUMBERS = {"remove_numbers", "text_to_emoji"}
+
+
+def test_steps_keep_the_digits_they_are_not_meant_to_touch():
+    digits = re.findall(r"\d", NUMBERS_TEXT)
+    for step in sorted(set(Pipeline.get_available_steps()) - CHANGES_NUMBERS):
+        out = Pipeline({step: True}).process(NUMBERS_TEXT)
+        assert re.findall(r"\d", str(out)) == digits, step
+
+
+def test_remove_currency_drops_only_currency_amounts():
+    out = Pipeline({"remove_currency": True}).process("harga Rp1.500.000 atau $20 untuk 2027")
+    assert out == "harga atau untuk 2027"
