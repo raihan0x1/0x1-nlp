@@ -4,7 +4,7 @@
 
 ### Advanced Indonesian Natural Language Processing Library
 
-[![CI](https://github.com/nahiarhd/nahiarhdNLP/actions/workflows/ci.yml/badge.svg)](https://github.com/nahiarhd/nahiarhdNLP/actions)
+[![CI](https://github.com/raihan0x1/nahiarhdNLP/actions/workflows/ci.yml/badge.svg)](https://github.com/raihan0x1/nahiarhdNLP/actions)
 [![PyPI version](https://img.shields.io/pypi/v/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
 [![Python Version](https://img.shields.io/pypi/pyversions/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -67,7 +67,7 @@ pip install nahiarhdNLP
 ### From source
 
 ```bash
-git clone https://github.com/nahiarhd/nahiarhdNLP.git
+git clone https://github.com/raihan0x1/nahiarhdNLP.git
 cd nahiarhdNLP
 pip install -e .
 ```
@@ -221,7 +221,7 @@ pipeline = Pipeline(config)
 text = """
 Haiii gengs!! 😍😍
 Jangan lupa follow @nahiarhdNLP ya!
-Cek website kita di https://github.com/nahiarhd
+Cek website kita di https://github.com/raihan0x1
 #NLP #IndonesianNLP #TextProcessing 🚀
 """
 
@@ -244,7 +244,7 @@ INPUT:
 
 Haiii gengs!! 😍😍
 Jangan lupa follow @nahiarhdNLP ya!
-Cek website kita di https://github.com/nahiarhd
+Cek website kita di https://github.com/raihan0x1
 #NLP #IndonesianNLP #TextProcessing 🚀
 
 ============================================================
@@ -868,7 +868,7 @@ pipeline = Pipeline(config)
 
 examples = [
     "Contact me at john.doe@gmail.com for more info",
-    "Visit https://github.com/nahiarhd for the code",
+    "Visit https://github.com/raihan0x1 for the code",
     "Thanks @john and @jane for your help!",
     "Email: info@company.com | Web: https://company.com | Twitter: @company"
 ]
@@ -890,7 +890,7 @@ Text Replacement:
 Input : Contact me at john.doe@gmail.com for more info
 Output: Contact me at <email> for more info
 ----------------------------------------------------------------------
-Input : Visit https://github.com/nahiarhd for the code
+Input : Visit https://github.com/raihan0x1 for the code
 Output: Visit <link> for the code
 ----------------------------------------------------------------------
 Input : Thanks @john and @jane for your help!
@@ -1203,10 +1203,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Project Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/nahiarhd/nahiarhdNLP?style=social)
-![GitHub forks](https://img.shields.io/github/forks/nahiarhd/nahiarhdNLP?style=social)
-![GitHub issues](https://img.shields.io/github/issues/nahiarhd/nahiarhdNLP)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/nahiarhd/nahiarhdNLP)
+![GitHub stars](https://img.shields.io/github/stars/raihan0x1/nahiarhdNLP?style=social)
+![GitHub forks](https://img.shields.io/github/forks/raihan0x1/nahiarhdNLP?style=social)
+![GitHub issues](https://img.shields.io/github/issues/raihan0x1/nahiarhdNLP)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/raihan0x1/nahiarhdNLP)
 
 ---
 

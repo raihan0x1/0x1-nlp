@@ -2,6 +2,10 @@
 
 ## [1.6.3] - 2026-11-17
 
+### Changed
+- Project URLs, badges, and clone path point at `raihan0x1/nahiarhdNLP` (GitHub account renamed)
+- A push to `main` with a new version publishes to PyPI and creates the tag and GitHub release
+
 ### Fixed
 - `remove_repeated_chars` no longer shortens digit runs (`2.000` stayed `2.00`, `Rp1.500.000` became `Rp1.500.00`)
 
