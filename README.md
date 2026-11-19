@@ -62,10 +62,10 @@
 
 ### Using pip
 
-The published distribution and Python import both use `nahiarhdNLP`.
+Install 0x1NLP with `0x1-nlp`. It installs `nahiarhdNLP`, which remains the Python import name. Existing projects can keep installing `nahiarhdNLP` directly.
 
 ```bash
-pip install nahiarhdNLP
+pip install 0x1-nlp
 ```
 
 ### From source
