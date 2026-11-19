@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "0x1-nlp"
-version = "1.0.0"
-description = "0x1NLP installation alias for Indonesian natural language preprocessing"
+version = "1.1.0"
+description = "0x1NLP: Indonesian natural language preprocessing"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
@@ -17,9 +17,9 @@ dependencies = ["nahiarhdNLP>=1.6.4"]
 dev = ["nahiarhdNLP[dev]>=1.6.4"]
 
 [project.urls]
-Homepage = "https://github.com/raihan0x1/nahiarhdNLP"
-Documentation = "https://github.com/raihan0x1/nahiarhdNLP#readme"
-Issues = "https://github.com/raihan0x1/nahiarhdNLP/issues"
+Homepage = "https://github.com/raihan0x1/0x1-nlp"
+Documentation = "https://github.com/raihan0x1/0x1-nlp#readme"
+Issues = "https://github.com/raihan0x1/0x1-nlp/issues"
 
 [tool.setuptools]
-packages = []
+packages = ["ox1nlp"]

@@ -33,11 +33,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/raihan0x1/nahiarhdNLP"
-Documentation = "https://github.com/raihan0x1/nahiarhdNLP#readme"
-Repository = "https://github.com/raihan0x1/nahiarhdNLP"
-Issues = "https://github.com/raihan0x1/nahiarhdNLP/issues"
-Changelog = "https://github.com/raihan0x1/nahiarhdNLP/blob/main/CHANGELOG.md"
+Homepage = "https://github.com/raihan0x1/0x1-nlp"
+Documentation = "https://github.com/raihan0x1/0x1-nlp#readme"
+Repository = "https://github.com/raihan0x1/0x1-nlp"
+Issues = "https://github.com/raihan0x1/0x1-nlp/issues"
+Changelog = "https://github.com/raihan0x1/0x1-nlp/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 dev = [

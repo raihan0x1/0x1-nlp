@@ -6,7 +6,7 @@
 
 ### Advanced Indonesian Natural Language Processing Library
 
-[![CI](https://github.com/raihan0x1/nahiarhdNLP/actions/workflows/ci.yml/badge.svg)](https://github.com/raihan0x1/nahiarhdNLP/actions)
+[![CI](https://github.com/raihan0x1/0x1-nlp/actions/workflows/ci.yml/badge.svg)](https://github.com/raihan0x1/0x1-nlp/actions)
 [![PyPI version](https://img.shields.io/pypi/v/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
 [![Python Version](https://img.shields.io/pypi/pyversions/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -62,7 +62,7 @@
 
 ### Using pip
 
-Install 0x1NLP with `0x1-nlp`. It installs `nahiarhdNLP`, which remains the Python import name. Existing projects can keep installing `nahiarhdNLP` directly.
+Install `0x1-nlp` 1.1 or newer to import `ox1nlp`. Existing projects can keep installing and importing `nahiarhdNLP`. The examples that use submodules still import from `nahiarhdNLP`.
 
 ```bash
 pip install 0x1-nlp
@@ -71,9 +71,10 @@ pip install 0x1-nlp
 ### From source
 
 ```bash
-git clone https://github.com/raihan0x1/nahiarhdNLP.git
-cd nahiarhdNLP
+git clone https://github.com/raihan0x1/0x1-nlp.git
+cd 0x1-nlp
 pip install -e .
+pip install -e ./packaging/0x1-nlp
 ```
 
 ### Requirements
@@ -86,7 +87,7 @@ pip install -e .
 ## 🚀 Quick Start
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp import Pipeline
 
 # Create a pipeline with configuration
 config = {
