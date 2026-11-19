@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nahiarhdNLP"
 version = "1.6.4"
-description = "Advanced Indonesian Natural Language Processing Library"
+description = "0x1NLP: Indonesian natural language preprocessing for Python"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"

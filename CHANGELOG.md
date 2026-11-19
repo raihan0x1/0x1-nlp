@@ -2,6 +2,9 @@
 
 ## [1.6.4] - 2026-11-17
 
+### Changed
+- The project uses the 0x1NLP brand. The distribution and Python imports continue to use `nahiarhdNLP`.
+
 ### Fixed
 - `remove_currency` needs a currency marker (`Rp`, `IDR`, `USD`, `$`, `€`, `£`, `¥`, `₹`): it used to delete every number (`2027`, `15 persen`) and left the `R` of `Rp`
 - Tests check that every step except `remove_numbers` and `text_to_emoji` keeps the digits of its input

@@ -1,6 +1,8 @@
 <div align="center">
 
-# 🇮🇩 nahiarhdNLP
+<a name="-nahiarhdnlp"></a>
+
+# 🇮🇩 0x1NLP
 
 ### Advanced Indonesian Natural Language Processing Library
 
@@ -41,7 +43,7 @@
 
 ## 🌟 Overview
 
-**nahiarhdNLP** adalah library Python yang dirancang khusus untuk preprocessing teks Bahasa Indonesia. Library ini menyediakan berbagai fungsi untuk membersihkan, menormalisasi, dan memproses teks dengan mudah dan efisien.
+**0x1NLP** adalah library Python yang dirancang khusus untuk preprocessing teks Bahasa Indonesia. Library ini menyediakan berbagai fungsi untuk membersihkan, menormalisasi, dan memproses teks dengan mudah dan efisien.
 
 ### ✨ Key Features
 
@@ -59,6 +61,8 @@
 ## 📦 Installation
 
 ### Using pip
+
+The published distribution and Python import both use `nahiarhdNLP`.
 
 ```bash
 pip install nahiarhdNLP
@@ -1189,7 +1193,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Raihan Hidayatullah Djunaedi**
 
 - Email: raihanhd.dev@gmail.com
-- GitHub: [@raihanhd12](https://github.com/raihanhd12)
+- GitHub: [@raihan0x1](https://github.com/raihan0x1)
 
 ---
 
