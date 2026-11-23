@@ -1148,18 +1148,23 @@ pytest
 ### Building Package
 
 ```bash
-# Install build tools
-pip install build twine
-
-# Build distributions
-python -m build
-
-# Upload to TestPyPI
-twine upload --repository testpypi dist/*
-
-# Upload to PyPI
-twine upload dist/*
+uv run --locked --extra dev python -m build
+uv run --locked --extra dev twine check dist/*
 ```
+
+### Releasing to PyPI
+
+On `main`, add release notes under `[Unreleased]` in `CHANGELOG.md`, or let the helper use commit subjects since the last release tag.
+
+```bash
+make release-version                 # defaults to patch
+git diff
+git add pyproject.toml uv.lock ox1nlp/__init__.py CHANGELOG.md
+git commit -m "chore(release): bump version"
+git push origin main
+```
+
+Use `make release-version BUMP=minor`, `BUMP=major`, or `BUMP=X.Y.Z` to choose a version. GitHub Actions tests and builds the new version, publishes it through PyPI Trusted Publishing, and creates the GitHub release.
 
 ---
 
