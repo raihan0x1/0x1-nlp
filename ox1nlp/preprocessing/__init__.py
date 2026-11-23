@@ -2,7 +2,7 @@
 
 Expose `Pipeline` for convenience so callers can do:
 
-        from nahiarhdNLP.preprocessing import Pipeline
+        from ox1nlp.preprocessing import Pipeline
 
 """
 

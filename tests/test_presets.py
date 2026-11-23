@@ -1,6 +1,6 @@
 """Named pipeline presets encode common Indonesian preprocessing jobs."""
 
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 
 def test_social_keeps_username_text_and_drops_urls():

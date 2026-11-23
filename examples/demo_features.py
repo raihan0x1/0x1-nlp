@@ -1,5 +1,5 @@
 """
-Demo script to showcase ALL 28 nahiarhdNLP features individually.
+Demo script to showcase ALL 28 0x1NLP features individually.
 
 This script demonstrates EVERY single feature with input/output examples.
 """
@@ -9,7 +9,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 console = Console()
 
@@ -447,7 +447,7 @@ def main():
         "\n[bold magenta]╔═══════════════════════════════════════════════════════════════════════╗[/bold magenta]"
     )
     console.print(
-        "[bold magenta]║                   nahiarhdNLP Feature Showcase                       ║[/bold magenta]"
+        "[bold magenta]║                   0x1NLP Feature Showcase                       ║[/bold magenta]"
     )
     console.print(
         "[bold magenta]║              ALL 28 FEATURES DEMONSTRATED                            ║[/bold magenta]"

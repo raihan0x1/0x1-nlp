@@ -4,7 +4,7 @@ Stopword remover for Indonesian text processing.
 
 import re
 
-from nahiarhdNLP.datasets.loaders import DatasetLoader
+from ox1nlp.datasets.loaders import DatasetLoader
 
 
 class StopwordRemover:

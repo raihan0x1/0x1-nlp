@@ -7,6 +7,32 @@ resolution-markers = [
 ]
 
 [[package]]
+name = "0x1-nlp"
+version = "1.7.0"
+source = { editable = "." }
+dependencies = [
+    { name = "pysastrawi" },
+]
+
+[package.optional-dependencies]
+dev = [
+    { name = "build" },
+    { name = "pytest" },
+    { name = "rich" },
+    { name = "twine" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0.0" },
+    { name = "pysastrawi", specifier = ">=1.2.0" },
+    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
+    { name = "rich", marker = "extra == 'dev'", specifier = ">=12.0.0" },
+    { name = "twine", marker = "extra == 'dev'", specifier = ">=4.0.0" },
+]
+provides-extras = ["dev"]
+
+[[package]]
 name = "backports-tarfile"
 version = "1.2.0"
 source = { registry = "https://pypi.org/simple" }
@@ -521,32 +547,6 @@ sdist = { url = "https://files.pythonhosted.org/packages/52/b8/c63995bebbb9ac9c0
 wheels = [
     { url = "https://files.pythonhosted.org/packages/5d/57/3c4b1c6f2e0cc29ba023802458ea3d2a996f87085559e4a5f2192d549532/more_itertools-11.2.1-py3-none-any.whl", hash = "sha256:35a7377edd1dd6608dcb2cdf534ded55ea32d49448875ad042cd3f879fb1ded0", size = 74405, upload-time = "2026-10-14T18:50:29.116Z" },
 ]
-
-[[package]]
-name = "nahiarhdnlp"
-version = "1.6.3"
-source = { editable = "." }
-dependencies = [
-    { name = "pysastrawi" },
-]
-
-[package.optional-dependencies]
-dev = [
-    { name = "build" },
-    { name = "pytest" },
-    { name = "rich" },
-    { name = "twine" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "build", marker = "extra == 'dev'", specifier = ">=1.0.0" },
-    { name = "pysastrawi", specifier = ">=1.2.0" },
-    { name = "pytest", marker = "extra == 'dev'", specifier = ">=7.0.0" },
-    { name = "rich", marker = "extra == 'dev'", specifier = ">=12.0.0" },
-    { name = "twine", marker = "extra == 'dev'", specifier = ">=4.0.0" },
-]
-provides-extras = ["dev"]
 
 [[package]]
 name = "nh3"

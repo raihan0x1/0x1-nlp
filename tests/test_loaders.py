@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-from nahiarhdNLP.datasets.loaders import DatasetLoader
+from ox1nlp.datasets.loaders import DatasetLoader
 
 
 def test_load_stopwords_includes_known_words():

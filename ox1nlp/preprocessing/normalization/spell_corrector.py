@@ -4,7 +4,7 @@ Spell corrector untuk Bahasa Indonesia menggunakan DatasetLoader.
 
 import difflib
 
-from nahiarhdNLP.datasets.loaders import DatasetLoader
+from ox1nlp.datasets.loaders import DatasetLoader
 
 
 class SpellCorrector:

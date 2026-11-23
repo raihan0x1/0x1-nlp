@@ -4,7 +4,7 @@ import re
 
 import pytest
 
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 
 def test_process_empty_string_returns_empty():

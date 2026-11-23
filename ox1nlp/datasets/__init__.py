@@ -1,5 +1,5 @@
 """
-Dataset module for nahiarhdNLP.
+Dataset module for 0x1NLP.
 """
 
 from .loaders import DatasetLoader

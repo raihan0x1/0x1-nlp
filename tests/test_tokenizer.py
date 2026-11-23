@@ -2,8 +2,8 @@
 
 import pytest
 
-from nahiarhdNLP.preprocessing import Pipeline
-from nahiarhdNLP.preprocessing.tokenization.tokenizer import Tokenizer
+from ox1nlp.preprocessing import Pipeline
+from ox1nlp.preprocessing.tokenization.tokenizer import Tokenizer
 
 
 def test_tokenize_plain_words_splits_on_whitespace():

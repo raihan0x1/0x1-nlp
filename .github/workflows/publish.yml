@@ -29,7 +29,7 @@ jobs:
       - id: version
         run: |
           version=$(python3 -c 'import tomllib; print(tomllib.load(open("pyproject.toml", "rb"))["project"]["version"])')
-          code=$(curl -s -o /dev/null -w '%{http_code}' "https://pypi.org/pypi/nahiarhdNLP/$version/json")
+          code=$(curl -s -o /dev/null -w '%{http_code}' "https://pypi.org/pypi/0x1-nlp/$version/json")
           echo "version=$version" >> "$GITHUB_OUTPUT"
           echo "release=$([ "$code" = 404 ] && echo true || echo false)" >> "$GITHUB_OUTPUT"
           echo "version $version, PyPI answered $code"
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: pypi
-      url: https://pypi.org/p/nahiarhdNLP
+      url: https://pypi.org/p/0x1-nlp
     permissions:
       id-token: write
     steps:

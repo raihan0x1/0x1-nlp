@@ -5,7 +5,7 @@ Emoji normalizer for Indonesian text processing.
 import re
 from typing import Dict, List
 
-from nahiarhdNLP.datasets.loaders import DatasetLoader
+from ox1nlp.datasets.loaders import DatasetLoader
 
 
 class EmojiConverter:

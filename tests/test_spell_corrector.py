@@ -1,6 +1,6 @@
 """Spell correction: slang first, then exact wordlist membership."""
 
-from nahiarhdNLP.preprocessing.normalization.spell_corrector import SpellCorrector
+from ox1nlp.preprocessing.normalization.spell_corrector import SpellCorrector
 
 
 def test_correct_word_expands_slang():

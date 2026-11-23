@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.7.0] - Unreleased
+
+- `0x1-nlp` includes the full library and datasets under `ox1nlp`.
+- The existing `ox1nlp.Pipeline` and `ox1nlp.DatasetLoader` imports continue to work. Projects using `nahiarhdNLP` can migrate by updating their dependency and import paths.
+
 ## [1.6.4] - 2026-11-17
 
 ### Changed

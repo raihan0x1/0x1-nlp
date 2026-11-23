@@ -1,8 +1,8 @@
 """TextCleaner instance methods must stay callable after __init__."""
 
-from nahiarhdNLP.preprocessing.cleaning.text_cleaner import TextCleaner
-from nahiarhdNLP.preprocessing.cleaning.text_cleaner_word import TextCleanerWord
-from nahiarhdNLP.preprocessing.cleaning.text_replace import TextReplace
+from ox1nlp.preprocessing.cleaning.text_cleaner import TextCleaner
+from ox1nlp.preprocessing.cleaning.text_cleaner_word import TextCleanerWord
+from ox1nlp.preprocessing.cleaning.text_replace import TextReplace
 
 
 def test_remove_urls_is_callable_on_instance():

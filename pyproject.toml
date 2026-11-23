@@ -3,8 +3,8 @@ requires = ["setuptools>=77.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nahiarhdNLP"
-version = "1.6.4"
+name = "0x1-nlp"
+version = "1.7.0"
 description = "0x1NLP: Indonesian natural language preprocessing for Python"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -49,10 +49,10 @@ dev = [
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["nahiarhdNLP*"]
+include = ["ox1nlp*"]
 
 [tool.setuptools.package-data]
-"nahiarhdNLP" = ["py.typed", "datasets/*.csv", "datasets/*.json"]
+"ox1nlp" = ["py.typed", "datasets/*.csv", "datasets/*.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

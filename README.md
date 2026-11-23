@@ -1,16 +1,16 @@
 <div align="center">
 
-<a name="-nahiarhdnlp"></a>
+<a name="-0x1nlp"></a>
 
 # 🇮🇩 0x1NLP
 
 ### Advanced Indonesian Natural Language Processing Library
 
 [![CI](https://github.com/raihan0x1/0x1-nlp/actions/workflows/ci.yml/badge.svg)](https://github.com/raihan0x1/0x1-nlp/actions)
-[![PyPI version](https://img.shields.io/pypi/v/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
-[![Python Version](https://img.shields.io/pypi/pyversions/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
+[![PyPI version](https://img.shields.io/pypi/v/0x1-nlp.svg)](https://pypi.org/project/0x1-nlp/)
+[![Python Version](https://img.shields.io/pypi/pyversions/0x1-nlp.svg)](https://pypi.org/project/0x1-nlp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Downloads](https://img.shields.io/pypi/dm/nahiarhdNLP.svg)](https://pypi.org/project/nahiarhdNLP/)
+[![Downloads](https://img.shields.io/pypi/dm/0x1-nlp.svg)](https://pypi.org/project/0x1-nlp/)
 
 **Lightweight, powerful, and easy-to-use Indonesian text preprocessing library**
 
@@ -62,10 +62,10 @@
 
 ### Using pip
 
-Install `0x1-nlp` 1.1 or newer to import `ox1nlp`. Existing projects can keep installing and importing `nahiarhdNLP`. The examples that use submodules still import from `nahiarhdNLP`.
+Install `0x1-nlp>=1.7.0` to use the standalone 0x1NLP package. To migrate an existing project, replace the `nahiarhdNLP` dependency with `0x1-nlp>=1.7.0` and change imports from `nahiarhdNLP` to `ox1nlp`.
 
 ```bash
-pip install 0x1-nlp
+pip install '0x1-nlp>=1.7.0'
 ```
 
 ### From source
@@ -74,7 +74,6 @@ pip install 0x1-nlp
 git clone https://github.com/raihan0x1/0x1-nlp.git
 cd 0x1-nlp
 pip install -e .
-pip install -e ./packaging/0x1-nlp
 ```
 
 ### Requirements
@@ -110,7 +109,7 @@ print(result)
 Named presets for the three jobs people actually run:
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 Pipeline.social().process("Hai @teman cek https://example.com #NLP")
 Pipeline.formal().process("Saya sedang belajar pemrograman")
@@ -178,7 +177,7 @@ Pipeline.anonymize().process("hubungi john@example.com atau @admin")
 #### Example 1.1: Basic Pipeline
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Configure pipeline
 config = {
@@ -209,7 +208,7 @@ Output: Hello World! Mention user123 and visit
 #### Example 1.2: Social Media Text Cleaning
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 config = {
     "clean_html": True,
@@ -225,7 +224,7 @@ pipeline = Pipeline(config)
 # Input - Typical social media post
 text = """
 Haiii gengs!! 😍😍
-Jangan lupa follow @nahiarhdNLP ya!
+Jangan lupa follow @raihan0x1 ya!
 Cek website kita di https://github.com/raihan0x1
 #NLP #IndonesianNLP #TextProcessing 🚀
 """
@@ -248,20 +247,20 @@ print("=" * 60)
 INPUT:
 
 Haiii gengs!! 😍😍
-Jangan lupa follow @nahiarhdNLP ya!
+Jangan lupa follow @raihan0x1 ya!
 Cek website kita di https://github.com/raihan0x1
 #NLP #IndonesianNLP #TextProcessing 🚀
 
 ============================================================
 OUTPUT:
-Haiii gengs!! Jangan lupa follow nahiarhdNLP ya! Cek website kita di NLP IndonesianNLP TextProcessing
+Haiii gengs!! Jangan lupa follow @raihan0x1 ya! Cek website kita di NLP IndonesianNLP TextProcessing
 ============================================================
 ```
 
 #### Example 1.3: Update Pipeline Configuration
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Initial configuration
 config = {"clean_html": True, "remove_urls": True}
@@ -286,7 +285,7 @@ print(f"Enabled steps: {pipeline.get_enabled_steps()}")
 #### Example 1.4: Feature Discovery
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Get all available features
 all_features = Pipeline.get_available_steps()
@@ -343,7 +342,7 @@ URLs:
 #### Example 2.1: HTML Tag Removal
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 config = {"clean_html": True}
 pipeline = Pipeline(config)
@@ -383,7 +382,7 @@ Output: Clean text
 #### Example 2.2: URL Processing
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Remove URLs completely
 config_remove = {"remove_urls": True}
@@ -411,7 +410,7 @@ Clean URLs   : Visit github.com and example.com for more info
 #### Example 2.3: Mention & Hashtag Processing
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 text = "Hey @john_doe and @jane! Check out #Python #MachineLearning #AI"
 
@@ -439,7 +438,7 @@ Clean @# (keep) : Hey john_doe and jane! Check out Python MachineLearning AI
 #### Example 2.4: Emoji Handling
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 config = {"remove_emoji": True}
 pipeline = Pipeline(config)
@@ -473,7 +472,7 @@ Output: Weather today
 #### Example 2.5: Repeated Characters Normalization
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 config = {"remove_repeated_chars": True}
 pipeline = Pipeline(config)
@@ -514,7 +513,7 @@ Output: Makasiih yaa
 #### Example 3.1: Emoji Conversion
 
 ```python
-from nahiarhdNLP.preprocessing.normalization.emoji import EmojiConverter
+from ox1nlp.preprocessing.normalization.emoji import EmojiConverter
 
 emoji = EmojiConverter()
 emoji._load_data()
@@ -550,7 +549,7 @@ Output: saya senang 😊
 #### Example 3.2: Spell Correction & Slang Normalization
 
 ```python
-from nahiarhdNLP.preprocessing.normalization.spell_corrector import SpellCorrector
+from ox1nlp.preprocessing.normalization.spell_corrector import SpellCorrector
 
 spell = SpellCorrector()
 
@@ -609,7 +608,7 @@ Output: jangan lupa ya
 #### Example 3.3: Complete Text Normalization Pipeline
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Comprehensive normalization pipeline
 config = {
@@ -665,7 +664,7 @@ haiii temans!! kemarin gue sudah coba apps baruu loh di kerenbangett recommended
 #### Example 4.1: Stemming
 
 ```python
-from nahiarhdNLP.preprocessing.linguistic.stemmer import Stemmer
+from ox1nlp.preprocessing.linguistic.stemmer import Stemmer
 
 stemmer = Stemmer()
 
@@ -732,7 +731,7 @@ Output: bahagia adalah kunci sukses
 #### Example 4.2: Stopword Removal
 
 ```python
-from nahiarhdNLP.preprocessing.linguistic.stopword import StopwordRemover
+from ox1nlp.preprocessing.linguistic.stopword import StopwordRemover
 
 stopword = StopwordRemover()
 stopword._load_data()
@@ -772,7 +771,7 @@ Cleaned : contoh kalimat stopwords dihapus
 #### Example 4.3: Complete Linguistic Pipeline
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Linguistic processing pipeline
 config = {
@@ -818,7 +817,7 @@ Processed: bahagia jalan tuju
 #### Example 4.4: Tokenization
 
 ```python
-from nahiarhdNLP.preprocessing.tokenization.tokenizer import Tokenizer
+from ox1nlp.preprocessing.tokenization.tokenizer import Tokenizer
 
 tokenizer = Tokenizer()
 
@@ -860,7 +859,7 @@ Tokens: ['Email', ':', 'test@example.com', ',', 'Website', ':', 'https://example
 #### Example 5.1: Email, Link, and Mention Replacement
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Configure replacement pipeline
 config = {
@@ -909,7 +908,7 @@ Output: Email: <email> | Web: <link> | Twitter: <user>
 #### Example 5.2: Data Anonymization Pipeline
 
 ```python
-from nahiarhdNLP.preprocessing import Pipeline
+from ox1nlp.preprocessing import Pipeline
 
 # Complete anonymization pipeline
 config = {
@@ -971,7 +970,7 @@ Customer: <user> Email: <email> Phone: Website: <link>
 #### Example 6.1: Loading Built-in Datasets
 
 ```python
-from nahiarhdNLP.datasets import DatasetLoader
+from ox1nlp.datasets import DatasetLoader
 
 loader = DatasetLoader()
 
@@ -1208,10 +1207,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Project Statistics
 
-![GitHub stars](https://img.shields.io/github/stars/raihan0x1/nahiarhdNLP?style=social)
-![GitHub forks](https://img.shields.io/github/forks/raihan0x1/nahiarhdNLP?style=social)
-![GitHub issues](https://img.shields.io/github/issues/raihan0x1/nahiarhdNLP)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/raihan0x1/nahiarhdNLP)
+![GitHub stars](https://img.shields.io/github/stars/raihan0x1/0x1-nlp?style=social)
+![GitHub forks](https://img.shields.io/github/forks/raihan0x1/0x1-nlp?style=social)
+![GitHub issues](https://img.shields.io/github/issues/raihan0x1/0x1-nlp)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/raihan0x1/0x1-nlp)
 
 ---
 
