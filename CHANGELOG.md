@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+## [1.7.1] - 2026-11-23
+
+### Changed
+- Prepare 0x1-nlp versions with make
+
 ## [1.7.0] - 2026-11-23
 
 - `0x1-nlp` includes the full library and datasets under `ox1nlp`.

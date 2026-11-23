@@ -8,7 +8,7 @@ from .datasets import DatasetLoader
 from .preprocessing import Pipeline
 
 # Version info
-__version__ = "1.7.0"
+__version__ = "1.7.1"
 __author__ = "Raihan Hidayatullah Djunaedi"
 __email__ = "raihanhd.dev@gmail.com"
 
